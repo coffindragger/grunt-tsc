@@ -464,10 +464,10 @@ module.exports = function (grunt) {
                 temp = String(opt.module || "").toLowerCase();
                 if (typeOf(opt.module) === "undefined") {
                     module = "commonjs";
-                } else if (["commonjs", "amd"].indexOf(temp) !== -1) {
+                } else if (["commonjs", "amd", "system"].indexOf(temp) !== -1) {
                     module = temp;
                 } else {
-                    throw new Error("Incorrect \"module\" option, must be \"commonjs\" or \"amd\".");
+                    throw new Error("Incorrect \"module\" option, must be \"commonjs\" or \"amd\" or \"system\".");
                 }
             }
             return module;
